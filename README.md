@@ -38,7 +38,7 @@ A Laravel 12 application for managing job listings with advanced filtering featu
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/job-board.git
+git clone https://github.com/Eng-IslamMoh/job-board.git
 cd job-board
 composer install
 cp .env.example .env
