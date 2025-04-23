@@ -81,7 +81,7 @@ php artisan serve
 
 ### Postman Collection
 
-**[**Postman Collection Link**](https://documenter.getpostman.com/view/12381022/2sB2ixjtYb)**
+**[**Postman Collection Link**](https://api.postman.com/collections/12381022-a71fcd0a-7954-48e0-80ef-217582dab705?access_key=PMAT-01JSHW1BX2C4KXE3SX00X57YK3)**
 
 ### Endpoints
 
