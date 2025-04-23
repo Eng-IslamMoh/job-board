@@ -1,0 +1,1108 @@
+{
+	"info": {
+		"_postman_id": "a71fcd0a-7954-48e0-80ef-217582dab705",
+		"name": "Job Board API",
+		"description": "### API Documentation\n\nPostman Collection\n\nWe have created an online Postman collection to help you easily test all the API endpoints. You can import the Postman collection using the following link:\n\n[Postman Collection Link](https://documenter.getpostman.com/view/12381022/2sB2ixjtYb)\n\n##### How to Use the Postman Collection\n\n1. **Import the Collection**:\n    \n    - Open the Postman application.\n        \n    - Click the \"Import\" button in the top left corner.\n        \n    - Select the \"Link\" tab.\n        \n    - CopyInsert\\[[https://documenter.getpostman.com/view/12381022/2sB2ixjtYb](https://documenter.getpostman.com/view/12381022/2sB2ixjtYb)\\]([https://documenter.getpostman.com/view/12381022/2sB2ixjtYb](https://documenter.getpostman.com/view/12381022/2sB2ixjtYb))\n        \n2. **Browse Endpoints**:\n    \n    - After importing, the collection will appear in the sidebar under the specified collection name.\n        \n    - Click on the collection name to expand and view all available endpoints.\n        \n3. **Set Up Environment**:\n    \n    - You might need to set up an environment with variables like `base_url`.\n        \n    - Click on \"Environments\" in the left sidebar, then \"Add\" to create a new environment.\n        \n    - Add a new variable named `base_url` and set its value to `http://localhost:8000/api` or your server address.\n        \n    - Select the environment you created from the dropdown in the top right corner.\n        \n4. **Make Requests**:\n    \n    - Click on any endpoint within the collection.\n        \n    - Modify the parameters as needed in the central section.\n        \n    - Click the \"Send\" button to make the request and view the response.\n        \n5. **Edit Requests**:\n    \n    - You can edit any request to suit your needs.\n        \n    - Use tabs like \"Params\", \"Headers\", and \"Body\" to customize the request.\n        \n\n##### Examples of Using Endpoints\n\n- **GET /api/jobs**:\n    \n    - Description: Returns a list of jobs with optional filtering.\n        \n    - Usage: Select the `GET /api/jobs` endpoint, add any filter parameters if needed, and click \"Send\".\n        \n\n##### Tips\n\n- **Customize Requests**: You can modify any request to meet your specific needs, such as changing filter parameters or modifying request data.\n    \n- **Save Responses**: You can save responses for later use or to compare results.\n    \n- **Security Settings**: If you need to set up security like tokens, you can add them in the \"Headers\" tab.\n    \n\nThis way, users can easily import and use the Postman collection to test your API.\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12381022"
+	},
+	"item": [
+		{
+			"name": "Get All Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Get a paginated list of all jobs."
+			},
+			"response": [
+				{
+					"name": "Get All Jobs Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:12:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"Machinery Maintenance\",\n                \"description\": \"Et dolore hic et nesciunt est asperiores. Aut molestiae sit cum id dolores. Et velit pariatur quasi provident et quos quam.\",\n                \"company_name\": \"Schamberger Inc\",\n                \"salary_min\": \"5401.00\",\n                \"salary_max\": \"17547.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-03-07 04:56:45\",\n                \"created_at\": \"2024-11-17T04:19:57.000000Z\",\n                \"updated_at\": \"2024-11-17T04:19:57.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Ship Carpenter and Joiner\",\n                \"description\": \"Laboriosam id illum distinctio est illo earum. Beatae dicta ipsum adipisci reprehenderit consequatur non. Quo quo impedit quae dolor hic dolores.\",\n                \"company_name\": \"Renner LLC\",\n                \"salary_min\": \"7758.00\",\n                \"salary_max\": \"10022.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-12-22 07:02:23\",\n                \"created_at\": \"2024-09-16T08:58:33.000000Z\",\n                \"updated_at\": \"2024-09-16T08:58:33.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Machine Operator\",\n                \"description\": \"Fugiat voluptas sequi aut quia similique voluptatem. Voluptatibus enim neque pariatur. Perspiciatis libero qui eaque sed incidunt unde.\",\n                \"company_name\": \"Hudson LLC\",\n                \"salary_min\": \"4993.00\",\n                \"salary_max\": \"13410.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-24 18:34:13\",\n                \"created_at\": \"2023-10-23T15:17:37.000000Z\",\n                \"updated_at\": \"2023-10-23T15:17:37.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Marine Architect\",\n                \"description\": \"Aut non sed commodi consequatur. Harum et dolores et provident. Iusto dolorum non vitae sunt eos. Minus qui harum consectetur.\",\n                \"company_name\": \"DuBuque-Koelpin\",\n                \"salary_min\": \"4176.00\",\n                \"salary_max\": \"18854.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-09-19 01:07:37\",\n                \"created_at\": \"2024-09-10T10:22:25.000000Z\",\n                \"updated_at\": \"2024-09-10T10:22:25.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Technical Program Manager\",\n                \"description\": \"Veniam dolor voluptatem nemo esse est. Quia adipisci distinctio perspiciatis consequatur sequi a. Aut facilis nisi quis sapiente est reprehenderit pariatur.\",\n                \"company_name\": \"Mosciski, Prosacco and Ledner\",\n                \"salary_min\": \"5989.00\",\n                \"salary_max\": \"11374.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-06-28 20:46:42\",\n                \"created_at\": \"2023-10-28T03:24:03.000000Z\",\n                \"updated_at\": \"2023-10-28T03:24:03.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"Engineer\",\n                \"description\": \"Quia tempore ut voluptates enim sint et est. Dolor quasi vero dicta repellendus. Aut excepturi consequatur veniam consectetur porro. Non consequatur similique id.\",\n                \"company_name\": \"Jones-Fahey\",\n                \"salary_min\": \"4139.00\",\n                \"salary_max\": \"16750.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-03-25 15:46:31\",\n                \"created_at\": \"2024-01-08T14:22:36.000000Z\",\n                \"updated_at\": \"2024-01-08T14:22:36.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"Metal Pourer and Caster\",\n                \"description\": \"Reprehenderit consequuntur culpa et earum distinctio cupiditate. Dolor alias quia voluptate optio. Voluptates ratione non deleniti et atque. Incidunt ut dignissimos assumenda doloribus tenetur est tenetur.\",\n                \"company_name\": \"Turcotte, Gibson and Morissette\",\n                \"salary_min\": \"7080.00\",\n                \"salary_max\": \"16932.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-04-15 19:48:32\",\n                \"created_at\": \"2024-04-08T18:26:04.000000Z\",\n                \"updated_at\": \"2024-04-08T18:26:04.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"title\": \"Payroll Clerk\",\n                \"description\": \"Doloremque est pariatur et aliquid. Et et ipsam consequatur rerum omnis. Quia ducimus voluptates eligendi distinctio quia eveniet vitae. Molestiae aut ut quis tempora nesciunt quia.\",\n                \"company_name\": \"Boyer-Wilderman\",\n                \"salary_min\": \"5377.00\",\n                \"salary_max\": \"13733.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-01-18 04:25:13\",\n                \"created_at\": \"2023-12-13T11:44:53.000000Z\",\n                \"updated_at\": \"2023-12-13T11:44:53.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"title\": \"Aircraft Launch and Recovery Officer\",\n                \"description\": \"Ab eligendi corporis maxime tenetur quis quam dolores. Qui sint autem dignissimos culpa aut ratione. Amet labore est minus molestias qui. Reiciendis ut rem qui cupiditate eius rerum.\",\n                \"company_name\": \"Leuschke PLC\",\n                \"salary_min\": \"3543.00\",\n                \"salary_max\": \"12911.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-02-19 16:08:45\",\n                \"created_at\": \"2023-09-05T23:31:19.000000Z\",\n                \"updated_at\": \"2023-09-05T23:31:19.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"title\": \"Teller\",\n                \"description\": \"Velit totam veniam natus ducimus qui. Temporibus mollitia ab sunt quos quaerat et aspernatur. Et autem beatae vel et qui labore architecto. Voluptatem odit tenetur ad ut sunt voluptate. Pariatur quas nobis hic molestias aut.\",\n                \"company_name\": \"Ondricka-Wyman\",\n                \"salary_min\": \"7448.00\",\n                \"salary_max\": \"20000.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-07 08:28:23\",\n                \"created_at\": \"2024-07-08T21:13:36.000000Z\",\n                \"updated_at\": \"2024-07-08T21:13:36.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 50,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Job Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=job_type=full-time",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "job_type=full-time"
+						}
+					]
+				},
+				"description": "Filter jobs by job type (full-time, part-time, contract, freelance)."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Job Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=job_type=full-time",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "job_type=full-time"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:13:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 11,\n                \"title\": \"Electrician\",\n                \"description\": \"Minus accusamus laboriosam nihil fuga minima. Quaerat asperiores libero sed. Inventore reprehenderit repudiandae rem iure accusantium dignissimos. Facere tempore tempore veniam itaque ipsum itaque sunt.\",\n                \"company_name\": \"Kovacek-Satterfield\",\n                \"salary_min\": \"3488.00\",\n                \"salary_max\": \"18952.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-10-22 00:42:37\",\n                \"created_at\": \"2023-07-09T18:57:37.000000Z\",\n                \"updated_at\": \"2023-07-09T18:57:37.000000Z\"\n            },\n            {\n                \"id\": 14,\n                \"title\": \"Fraud Investigator\",\n                \"description\": \"Ut sit inventore quas molestiae distinctio ut facere. Quasi et adipisci rerum quo corrupti. Perspiciatis delectus est id officia magnam quibusdam ab et. Consectetur animi maiores qui iusto quae quaerat nihil.\",\n                \"company_name\": \"Cummerata PLC\",\n                \"salary_min\": \"5706.00\",\n                \"salary_max\": \"14372.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-18 03:02:56\",\n                \"created_at\": \"2025-03-18T16:40:23.000000Z\",\n                \"updated_at\": \"2025-03-18T16:40:23.000000Z\"\n            },\n            {\n                \"id\": 21,\n                \"title\": \"Chemical Equipment Operator\",\n                \"description\": \"Ullam quod perferendis debitis nisi perspiciatis ipsam. Dignissimos recusandae dolores velit nam ut assumenda. Voluptas nisi cum officia veritatis perferendis suscipit dolore. Illum repellendus ullam laudantium dignissimos nihil suscipit aperiam voluptatibus.\",\n                \"company_name\": \"Torp, Stroman and Abshire\",\n                \"salary_min\": \"7631.00\",\n                \"salary_max\": \"10561.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-02-11 19:08:34\",\n                \"created_at\": \"2025-01-26T21:09:21.000000Z\",\n                \"updated_at\": \"2025-01-26T21:09:21.000000Z\"\n            },\n            {\n                \"id\": 28,\n                \"title\": \"Occupational Therapist Aide\",\n                \"description\": \"Quasi est repellat asperiores natus aliquid est aliquid. Ab aliquam id asperiores molestiae. Nisi esse et aut amet dolorem perferendis.\",\n                \"company_name\": \"Kohler Ltd\",\n                \"salary_min\": \"3892.00\",\n                \"salary_max\": \"9665.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-02-22 02:32:33\",\n                \"created_at\": \"2025-01-03T13:43:09.000000Z\",\n                \"updated_at\": \"2025-01-03T13:43:09.000000Z\"\n            },\n            {\n                \"id\": 31,\n                \"title\": \"Transportation Manager\",\n                \"description\": \"Ab placeat possimus doloremque iste. Nam est consequatur aut eos eum harum ullam. In culpa amet omnis. Sit non accusamus nihil incidunt aut repellat quis.\",\n                \"company_name\": \"Hessel Inc\",\n                \"salary_min\": \"4581.00\",\n                \"salary_max\": \"10057.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-01-16 13:33:43\",\n                \"created_at\": \"2023-12-09T21:21:03.000000Z\",\n                \"updated_at\": \"2023-12-09T21:21:03.000000Z\"\n            },\n            {\n                \"id\": 32,\n                \"title\": \"Freight Inspector\",\n                \"description\": \"Officiis itaque sit tempore nam. Consequatur dolorem facilis qui. Odit aut est aliquid corrupti voluptatum dolorem.\",\n                \"company_name\": \"Larson, Simonis and Homenick\",\n                \"salary_min\": \"5376.00\",\n                \"salary_max\": \"19475.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-10-20 09:59:40\",\n                \"created_at\": \"2024-09-30T01:50:03.000000Z\",\n                \"updated_at\": \"2024-09-30T01:50:03.000000Z\"\n            },\n            {\n                \"id\": 36,\n                \"title\": \"Machine Tool Operator\",\n                \"description\": \"Et in magnam iure quisquam libero placeat aut. Nihil recusandae libero molestiae doloribus sed rerum rerum. Porro quasi atque voluptatem in. Dolores quis sapiente deserunt dolor repudiandae tempore ipsa.\",\n                \"company_name\": \"McCullough-Moen\",\n                \"salary_min\": \"4182.00\",\n                \"salary_max\": \"17737.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-09-10 17:03:01\",\n                \"created_at\": \"2023-10-26T05:12:33.000000Z\",\n                \"updated_at\": \"2023-10-26T05:12:33.000000Z\"\n            },\n            {\n                \"id\": 42,\n                \"title\": \"Cook\",\n                \"description\": \"Aliquid dolorem explicabo nihil sit aut voluptatem. Mollitia dolorem nam voluptas minus provident. Corrupti repellat unde maiores harum dolorem qui labore.\",\n                \"company_name\": \"Mayert-Heaney\",\n                \"salary_min\": \"3832.00\",\n                \"salary_max\": \"19649.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2023-12-02 23:32:36\",\n                \"created_at\": \"2023-10-12T17:04:40.000000Z\",\n                \"updated_at\": \"2023-10-12T17:04:40.000000Z\"\n            },\n            {\n                \"id\": 44,\n                \"title\": \"Forming Machine Operator\",\n                \"description\": \"Commodi enim officia dolores architecto esse. Voluptatem nam repudiandae voluptate voluptatibus.\",\n                \"company_name\": \"Gleichner PLC\",\n                \"salary_min\": \"5371.00\",\n                \"salary_max\": \"16323.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-12-11 18:15:44\",\n                \"created_at\": \"2024-08-05T16:47:30.000000Z\",\n                \"updated_at\": \"2024-08-05T16:47:30.000000Z\"\n            },\n            {\n                \"id\": 51,\n                \"title\": \"Woodworking Machine Setter\",\n                \"description\": \"Tenetur dolor repudiandae ea amet exercitationem blanditiis rerum impedit. Quis dolorem blanditiis non neque. Corrupti et totam et et vel ea velit.\",\n                \"company_name\": \"Russel, Pouros and Macejkovic\",\n                \"salary_min\": \"6489.00\",\n                \"salary_max\": \"14112.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-02-04 06:04:04\",\n                \"created_at\": \"2024-12-20T16:38:09.000000Z\",\n                \"updated_at\": \"2024-12-20T16:38:09.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 12,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Salary Range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=salary_min>=1000 AND salary_max<=10000",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "salary_min>=1000 AND salary_max<=10000"
+						}
+					]
+				},
+				"description": "Filter jobs by salary range."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Salary Range Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=salary_min>=1000 AND salary_max<=10000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "salary_min>=1000 AND salary_max<=10000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:14:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 232,\n                \"title\": \"Forest Fire Inspector\",\n                \"description\": \"Maxime neque molestiae optio omnis ullam. Eveniet ratione ea ratione sequi et sequi sint exercitationem. Sequi ea officia aperiam quaerat praesentium iste.\",\n                \"company_name\": \"Stoltenberg, Bernhard and Ebert\",\n                \"salary_min\": \"6807.00\",\n                \"salary_max\": \"9000.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-01-10 01:17:23\",\n                \"created_at\": \"2024-11-25T02:18:19.000000Z\",\n                \"updated_at\": \"2024-11-25T02:18:19.000000Z\"\n            },\n            {\n                \"id\": 129,\n                \"title\": \"Tractor Operator\",\n                \"description\": \"Omnis dolores consequatur ut. Sed praesentium voluptate eum quae. Vel eos facilis non. Dolor officiis ut et.\",\n                \"company_name\": \"Kautzer-Yundt\",\n                \"salary_min\": \"3243.00\",\n                \"salary_max\": \"9014.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-04-04 20:01:44\",\n                \"created_at\": \"2024-03-28T05:00:08.000000Z\",\n                \"updated_at\": \"2024-03-28T05:00:08.000000Z\"\n            },\n            {\n                \"id\": 382,\n                \"title\": \"Mail Machine Operator\",\n                \"description\": \"Aperiam cumque omnis vel molestias dolores. Temporibus tempora quaerat quo animi vitae cupiditate. Eveniet qui deleniti est enim. Quis est quibusdam officia placeat.\",\n                \"company_name\": \"Hoeger Group\",\n                \"salary_min\": \"7087.00\",\n                \"salary_max\": \"9024.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-01-30 08:41:24\",\n                \"created_at\": \"2024-10-23T00:34:39.000000Z\",\n                \"updated_at\": \"2024-10-23T00:34:39.000000Z\"\n            },\n            {\n                \"id\": 488,\n                \"title\": \"Reservation Agent OR Transportation Ticket Agent\",\n                \"description\": \"Eveniet sint est quia repellat. Rerum voluptatem explicabo commodi nobis omnis harum expedita.\",\n                \"company_name\": \"Huel PLC\",\n                \"salary_min\": \"3693.00\",\n                \"salary_max\": \"9029.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-03-05 12:11:03\",\n                \"created_at\": \"2024-12-30T13:51:41.000000Z\",\n                \"updated_at\": \"2024-12-30T13:51:41.000000Z\"\n            },\n            {\n                \"id\": 320,\n                \"title\": \"Shampooer\",\n                \"description\": \"Ex voluptas velit distinctio a dolor aperiam nobis quasi. Laborum sit ipsam ut. Et et in provident repellendus officiis quidem voluptates. Ipsum nulla nihil sit temporibus ea.\",\n                \"company_name\": \"Dietrich-Lind\",\n                \"salary_min\": \"5437.00\",\n                \"salary_max\": \"9054.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-03-21 12:07:03\",\n                \"created_at\": \"2024-04-26T01:17:35.000000Z\",\n                \"updated_at\": \"2024-04-26T01:17:35.000000Z\"\n            },\n            {\n                \"id\": 338,\n                \"title\": \"Political Science Teacher\",\n                \"description\": \"Voluptate corporis consequuntur voluptatem quidem omnis. Non quisquam vel facilis qui voluptates possimus. Velit magni reiciendis dolorem fugiat totam soluta.\",\n                \"company_name\": \"Sauer, Trantow and Ferry\",\n                \"salary_min\": \"5184.00\",\n                \"salary_max\": \"9058.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-20 20:35:05\",\n                \"created_at\": \"2025-04-12T12:57:07.000000Z\",\n                \"updated_at\": \"2025-04-12T12:57:07.000000Z\"\n            },\n            {\n                \"id\": 111,\n                \"title\": \"Elementary and Secondary School Administrators\",\n                \"description\": \"Qui quo minus et. Quia quia deserunt iste sunt. Odit soluta nostrum dolorem eum deserunt neque.\",\n                \"company_name\": \"Powlowski, Boyle and Davis\",\n                \"salary_min\": \"4361.00\",\n                \"salary_max\": \"9059.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-17 22:57:30\",\n                \"created_at\": \"2024-10-18T22:57:57.000000Z\",\n                \"updated_at\": \"2024-10-18T22:57:57.000000Z\"\n            },\n            {\n                \"id\": 439,\n                \"title\": \"Organizational Development Manager\",\n                \"description\": \"Dicta et quas rem optio iste. Nihil molestias maiores ratione nesciunt et nobis.\",\n                \"company_name\": \"Dooley LLC\",\n                \"salary_min\": \"6691.00\",\n                \"salary_max\": \"9085.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-08 05:55:47\",\n                \"created_at\": \"2024-09-03T08:13:52.000000Z\",\n                \"updated_at\": \"2024-09-03T08:13:52.000000Z\"\n            },\n            {\n                \"id\": 473,\n                \"title\": \"Automotive Master Mechanic\",\n                \"description\": \"Officiis porro et consequuntur eos odit. Libero rerum similique quaerat voluptas et odit. Et enim non maiores sed aspernatur tempora. Velit dolorem velit numquam qui nobis eos cumque.\",\n                \"company_name\": \"Harber-Sawayn\",\n                \"salary_min\": \"6852.00\",\n                \"salary_max\": \"9115.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"freelance\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-02-07 17:04:05\",\n                \"created_at\": \"2025-01-16T12:06:45.000000Z\",\n                \"updated_at\": \"2025-01-16T12:06:45.000000Z\"\n            },\n            {\n                \"id\": 484,\n                \"title\": \"Farmer\",\n                \"description\": \"Fuga nobis praesentium dolorem natus cumque ducimus. Et qui expedita eos at et ipsa sint molestias. Quia sed voluptatibus et atque. Ad et eum reprehenderit cumque labore consequatur.\",\n                \"company_name\": \"Zulauf-Lindgren\",\n                \"salary_min\": \"6438.00\",\n                \"salary_max\": \"9147.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-03-02 02:03:12\",\n                \"created_at\": \"2025-02-18T05:01:35.000000Z\",\n                \"updated_at\": \"2025-02-18T05:01:35.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 5,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Remote Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=is_remote=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "is_remote=true"
+						}
+					]
+				},
+				"description": "Filter jobs by remote status."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Remote Status Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=is_remote=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "is_remote=true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:15:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 3,\n                \"title\": \"Machine Operator\",\n                \"description\": \"Fugiat voluptas sequi aut quia similique voluptatem. Voluptatibus enim neque pariatur. Perspiciatis libero qui eaque sed incidunt unde.\",\n                \"company_name\": \"Hudson LLC\",\n                \"salary_min\": \"4993.00\",\n                \"salary_max\": \"13410.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-24 18:34:13\",\n                \"created_at\": \"2023-10-23T15:17:37.000000Z\",\n                \"updated_at\": \"2023-10-23T15:17:37.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"title\": \"Aircraft Launch and Recovery Officer\",\n                \"description\": \"Ab eligendi corporis maxime tenetur quis quam dolores. Qui sint autem dignissimos culpa aut ratione. Amet labore est minus molestias qui. Reiciendis ut rem qui cupiditate eius rerum.\",\n                \"company_name\": \"Leuschke PLC\",\n                \"salary_min\": \"3543.00\",\n                \"salary_max\": \"12911.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-02-19 16:08:45\",\n                \"created_at\": \"2023-09-05T23:31:19.000000Z\",\n                \"updated_at\": \"2023-09-05T23:31:19.000000Z\"\n            },\n            {\n                \"id\": 14,\n                \"title\": \"Fraud Investigator\",\n                \"description\": \"Ut sit inventore quas molestiae distinctio ut facere. Quasi et adipisci rerum quo corrupti. Perspiciatis delectus est id officia magnam quibusdam ab et. Consectetur animi maiores qui iusto quae quaerat nihil.\",\n                \"company_name\": \"Cummerata PLC\",\n                \"salary_min\": \"5706.00\",\n                \"salary_max\": \"14372.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-18 03:02:56\",\n                \"created_at\": \"2025-03-18T16:40:23.000000Z\",\n                \"updated_at\": \"2025-03-18T16:40:23.000000Z\"\n            },\n            {\n                \"id\": 17,\n                \"title\": \"Counselor\",\n                \"description\": \"Porro odio illum ut qui. Deleniti aperiam soluta voluptatem asperiores ipsa qui eius. Vero praesentium distinctio quidem dolorem fugit omnis sed. Commodi veritatis culpa sint reprehenderit ea sit.\",\n                \"company_name\": \"Turner-Sipes\",\n                \"salary_min\": \"7860.00\",\n                \"salary_max\": \"18171.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-07-24 10:04:34\",\n                \"created_at\": \"2024-07-09T19:13:18.000000Z\",\n                \"updated_at\": \"2024-07-09T19:13:18.000000Z\"\n            },\n            {\n                \"id\": 27,\n                \"title\": \"Interior Designer\",\n                \"description\": \"Rem quas ducimus aut assumenda cupiditate quod. Quia optio assumenda eligendi placeat accusantium. Voluptatibus qui nisi et dolorem.\",\n                \"company_name\": \"Flatley Inc\",\n                \"salary_min\": \"3461.00\",\n                \"salary_max\": \"13497.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-03-30 18:17:38\",\n                \"created_at\": \"2025-03-16T08:58:30.000000Z\",\n                \"updated_at\": \"2025-03-16T08:58:30.000000Z\"\n            },\n            {\n                \"id\": 29,\n                \"title\": \"Broadcast Technician\",\n                \"description\": \"Provident exercitationem dolorum qui fugiat qui et. Et et ea sit sapiente assumenda cum. Eaque nemo laboriosam velit rerum. Eum nulla illum commodi et fuga incidunt.\",\n                \"company_name\": \"Mitchell PLC\",\n                \"salary_min\": \"7056.00\",\n                \"salary_max\": \"18817.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-04-09 11:47:55\",\n                \"created_at\": \"2025-03-13T03:18:56.000000Z\",\n                \"updated_at\": \"2025-03-13T03:18:56.000000Z\"\n            },\n            {\n                \"id\": 35,\n                \"title\": \"Pediatricians\",\n                \"description\": \"Voluptates ut in cumque autem illum hic. Magni velit qui omnis. Minima voluptatem laudantium et et sequi eligendi qui.\",\n                \"company_name\": \"Reichel-Considine\",\n                \"salary_min\": \"3164.00\",\n                \"salary_max\": \"17927.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-01 12:36:13\",\n                \"created_at\": \"2024-03-01T15:14:05.000000Z\",\n                \"updated_at\": \"2024-03-01T15:14:05.000000Z\"\n            },\n            {\n                \"id\": 37,\n                \"title\": \"Welding Machine Operator\",\n                \"description\": \"Deleniti ipsam nam dignissimos omnis. Eligendi molestiae nesciunt unde voluptas et.\",\n                \"company_name\": \"Pouros-Graham\",\n                \"salary_min\": \"6456.00\",\n                \"salary_max\": \"9402.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-05-06 14:26:29\",\n                \"created_at\": \"2024-02-28T12:24:07.000000Z\",\n                \"updated_at\": \"2024-02-28T12:24:07.000000Z\"\n            },\n            {\n                \"id\": 41,\n                \"title\": \"Recreation Worker\",\n                \"description\": \"Aut quos est est eos in. Provident quia velit deleniti officia. Voluptas nihil optio unde doloremque eos dolores.\",\n                \"company_name\": \"Schaden, Boyer and Hoppe\",\n                \"salary_min\": \"3946.00\",\n                \"salary_max\": \"14160.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-04-22 23:58:18\",\n                \"created_at\": \"2025-04-12T22:25:17.000000Z\",\n                \"updated_at\": \"2025-04-12T22:25:17.000000Z\"\n            },\n            {\n                \"id\": 47,\n                \"title\": \"Home Entertainment Equipment Installer\",\n                \"description\": \"Nobis perspiciatis labore porro accusamus eos reprehenderit qui. Molestiae eveniet provident porro porro perspiciatis. Error minus sint autem dolores voluptatibus.\",\n                \"company_name\": \"Powlowski-Miller\",\n                \"salary_min\": \"7899.00\",\n                \"salary_max\": \"12731.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-01-30 23:49:29\",\n                \"created_at\": \"2023-07-07T16:45:35.000000Z\",\n                \"updated_at\": \"2023-07-07T16:45:35.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 16,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Languages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=languages HAS_ANY (PHP,JavaScript)",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "languages HAS_ANY (PHP,JavaScript)"
+						}
+					]
+				},
+				"description": "Filter jobs by programming languages required."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Languages Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=languages HAS_ANY (PHP,JavaScript)",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "languages HAS_ANY (PHP,JavaScript)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:15:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 16,\n                \"title\": \"Conveyor Operator\",\n                \"description\": \"Est tempore dolores laboriosam labore. Qui debitis dolorum voluptatem. Minima qui nihil voluptatem distinctio illum ab molestias. Consequuntur delectus ea eligendi accusamus omnis blanditiis.\",\n                \"company_name\": \"Miller-Gutkowski\",\n                \"salary_min\": \"3201.00\",\n                \"salary_max\": \"11407.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-02-14 05:16:48\",\n                \"created_at\": \"2023-12-18T19:39:19.000000Z\",\n                \"updated_at\": \"2023-12-18T19:39:19.000000Z\"\n            },\n            {\n                \"id\": 34,\n                \"title\": \"Spraying Machine Operator\",\n                \"description\": \"Adipisci voluptate nulla pariatur debitis non ea. Pariatur eius molestiae at in dolor nisi vero. Velit repudiandae aut et quas sed est. Rerum tempore magni ut similique laboriosam ipsum cum.\",\n                \"company_name\": \"Volkman, Ryan and Leannon\",\n                \"salary_min\": \"5198.00\",\n                \"salary_max\": \"15337.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-07-17 07:44:32\",\n                \"created_at\": \"2023-12-31T01:22:05.000000Z\",\n                \"updated_at\": \"2023-12-31T01:22:05.000000Z\"\n            },\n            {\n                \"id\": 59,\n                \"title\": \"Animal Care Workers\",\n                \"description\": \"Iusto commodi facilis nam. Accusamus nesciunt ipsam voluptas iusto tenetur maxime. Vitae doloribus rerum delectus ducimus.\",\n                \"company_name\": \"Bartoletti and Sons\",\n                \"salary_min\": \"4041.00\",\n                \"salary_max\": \"16258.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-12-20 05:22:43\",\n                \"created_at\": \"2024-10-04T00:45:14.000000Z\",\n                \"updated_at\": \"2024-10-04T00:45:14.000000Z\"\n            },\n            {\n                \"id\": 72,\n                \"title\": \"Postal Service Mail Carrier\",\n                \"description\": \"Omnis omnis aut voluptas deserunt pariatur architecto dignissimos soluta. Rerum non quo qui repellat dolore.\",\n                \"company_name\": \"Boehm, Grimes and Stark\",\n                \"salary_min\": \"4450.00\",\n                \"salary_max\": \"19842.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-03-15 17:30:01\",\n                \"created_at\": \"2023-07-14T21:02:20.000000Z\",\n                \"updated_at\": \"2023-07-14T21:02:20.000000Z\"\n            },\n            {\n                \"id\": 86,\n                \"title\": \"Freight and Material Mover\",\n                \"description\": \"Et nisi nisi repellat id facere modi dolorem omnis. Laboriosam mollitia adipisci nihil tempora esse. Perferendis veritatis sapiente fuga earum cumque omnis corporis modi. Veniam nostrum non ipsum aperiam.\",\n                \"company_name\": \"Bartoletti Inc\",\n                \"salary_min\": \"3970.00\",\n                \"salary_max\": \"11540.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-07-18 01:30:00\",\n                \"created_at\": \"2024-04-25T07:18:13.000000Z\",\n                \"updated_at\": \"2024-04-25T07:18:13.000000Z\"\n            },\n            {\n                \"id\": 108,\n                \"title\": \"Manager\",\n                \"description\": \"Sit praesentium cum assumenda voluptate esse. Aspernatur ipsam inventore quia reiciendis est quod quis dolores. Sequi eos voluptatum dolores temporibus. Doloremque optio ut dolor suscipit illum et. Quas dolore velit aut incidunt minus ipsa.\",\n                \"company_name\": \"Maggio Ltd\",\n                \"salary_min\": \"7421.00\",\n                \"salary_max\": \"11646.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-10-31 01:31:01\",\n                \"created_at\": \"2024-03-16T18:43:50.000000Z\",\n                \"updated_at\": \"2024-03-16T18:43:50.000000Z\"\n            },\n            {\n                \"id\": 125,\n                \"title\": \"Bicycle Repairer\",\n                \"description\": \"Non hic mollitia ut. Et qui quia ut quod. Perspiciatis commodi dolores reprehenderit magnam fuga officia quia quaerat.\",\n                \"company_name\": \"Conroy-Okuneva\",\n                \"salary_min\": \"5165.00\",\n                \"salary_max\": \"17058.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-12-01 02:24:56\",\n                \"created_at\": \"2023-10-07T10:28:11.000000Z\",\n                \"updated_at\": \"2023-10-07T10:28:11.000000Z\"\n            },\n            {\n                \"id\": 139,\n                \"title\": \"Extraction Worker\",\n                \"description\": \"Sed sed nam quia repudiandae. Veniam harum est velit laudantium quisquam ab laborum. Explicabo dicta harum ex. Labore excepturi aperiam et est.\",\n                \"company_name\": \"Kemmer, Strosin and Goodwin\",\n                \"salary_min\": \"6718.00\",\n                \"salary_max\": \"19011.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-01-07 00:23:04\",\n                \"created_at\": \"2024-12-05T23:11:22.000000Z\",\n                \"updated_at\": \"2024-12-05T23:11:22.000000Z\"\n            },\n            {\n                \"id\": 161,\n                \"title\": \"Mine Cutting Machine Operator\",\n                \"description\": \"Amet amet occaecati sapiente esse at accusantium. Vel iusto odio magni ipsa cupiditate voluptas voluptas nostrum. Eius velit saepe neque odit itaque explicabo.\",\n                \"company_name\": \"Waelchi, Hyatt and Waters\",\n                \"salary_min\": \"6034.00\",\n                \"salary_max\": \"10407.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-01-06 20:10:16\",\n                \"created_at\": \"2023-10-26T19:12:12.000000Z\",\n                \"updated_at\": \"2023-10-26T19:12:12.000000Z\"\n            },\n            {\n                \"id\": 173,\n                \"title\": \"Utility Meter Reader\",\n                \"description\": \"Aspernatur delectus vel vero illum. Unde velit dolorem nihil ad quis. Neque dicta ipsa exercitationem porro vitae. Atque quis qui voluptates officiis incidunt voluptatum et.\",\n                \"company_name\": \"Stehr-Runolfsdottir\",\n                \"salary_min\": \"6948.00\",\n                \"salary_max\": \"13607.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-16 16:33:10\",\n                \"created_at\": \"2024-12-08T12:22:45.000000Z\",\n                \"updated_at\": \"2024-12-08T12:22:45.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 10,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=locations IS_ANY (New York,Remote)",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "locations IS_ANY (New York,Remote)"
+						}
+					]
+				},
+				"description": "Filter jobs by locations."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Locations Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=locations IS_ANY (New York,Remote)",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "locations IS_ANY (New York,Remote)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:15:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 5,\n                \"title\": \"Technical Program Manager\",\n                \"description\": \"Veniam dolor voluptatem nemo esse est. Quia adipisci distinctio perspiciatis consequatur sequi a. Aut facilis nisi quis sapiente est reprehenderit pariatur.\",\n                \"company_name\": \"Mosciski, Prosacco and Ledner\",\n                \"salary_min\": \"5989.00\",\n                \"salary_max\": \"11374.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-06-28 20:46:42\",\n                \"created_at\": \"2023-10-28T03:24:03.000000Z\",\n                \"updated_at\": \"2023-10-28T03:24:03.000000Z\"\n            },\n            {\n                \"id\": 43,\n                \"title\": \"Brake Machine Setter\",\n                \"description\": \"Dolorem quas et nam. Harum fuga tempore facilis praesentium voluptates. Dolor molestiae sed et ullam.\",\n                \"company_name\": \"Blick-Schmidt\",\n                \"salary_min\": \"4901.00\",\n                \"salary_max\": \"17456.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-12-12 08:03:26\",\n                \"created_at\": \"2023-07-04T14:16:37.000000Z\",\n                \"updated_at\": \"2023-07-04T14:16:37.000000Z\"\n            },\n            {\n                \"id\": 119,\n                \"title\": \"Biologist\",\n                \"description\": \"Rerum vitae ea ut culpa molestiae velit. Accusantium excepturi mollitia tempore accusamus molestiae provident. Fuga iste et tenetur sint.\",\n                \"company_name\": \"Hoeger-Hickle\",\n                \"salary_min\": \"5623.00\",\n                \"salary_max\": \"17933.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-12-15 09:12:21\",\n                \"created_at\": \"2023-07-16T00:30:35.000000Z\",\n                \"updated_at\": \"2023-07-16T00:30:35.000000Z\"\n            },\n            {\n                \"id\": 142,\n                \"title\": \"Separating Machine Operators\",\n                \"description\": \"Dolor consequatur voluptatem non minus nemo suscipit quis. Sit earum voluptas consequuntur laboriosam. Et eius et ea nihil laborum et est.\",\n                \"company_name\": \"Bednar Ltd\",\n                \"salary_min\": \"7791.00\",\n                \"salary_max\": \"11650.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-04-17 10:34:40\",\n                \"created_at\": \"2025-04-15T21:54:42.000000Z\",\n                \"updated_at\": \"2025-04-15T21:54:42.000000Z\"\n            },\n            {\n                \"id\": 158,\n                \"title\": \"Office and Administrative Support Worker\",\n                \"description\": \"Aut quidem id consectetur id et. Ducimus et ipsum consequuntur. In debitis quidem laboriosam aut.\",\n                \"company_name\": \"Gutkowski, Blanda and Braun\",\n                \"salary_min\": \"7901.00\",\n                \"salary_max\": \"10945.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"freelance\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-02-09 09:38:04\",\n                \"created_at\": \"2024-08-26T23:03:23.000000Z\",\n                \"updated_at\": \"2024-08-26T23:03:23.000000Z\"\n            },\n            {\n                \"id\": 175,\n                \"title\": \"Gas Plant Operator\",\n                \"description\": \"Consequatur hic consequuntur nihil suscipit. Inventore omnis accusamus atque molestiae tenetur animi. Quos beatae optio voluptatem enim velit. Ipsam est omnis eveniet labore est id.\",\n                \"company_name\": \"Goyette, Marvin and Hoppe\",\n                \"salary_min\": \"6403.00\",\n                \"salary_max\": \"16583.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-04-04 14:26:02\",\n                \"created_at\": \"2023-09-22T04:37:13.000000Z\",\n                \"updated_at\": \"2023-09-22T04:37:13.000000Z\"\n            },\n            {\n                \"id\": 191,\n                \"title\": \"CEO\",\n                \"description\": \"Ipsa quos nam quis mollitia corrupti. Quibusdam reprehenderit praesentium temporibus voluptatem. Aspernatur iure explicabo autem nostrum nostrum consequatur aliquid provident.\",\n                \"company_name\": \"Hyatt-Windler\",\n                \"salary_min\": \"3488.00\",\n                \"salary_max\": \"11234.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-04-17 23:30:37\",\n                \"created_at\": \"2024-06-18T12:01:38.000000Z\",\n                \"updated_at\": \"2024-06-18T12:01:38.000000Z\"\n            },\n            {\n                \"id\": 210,\n                \"title\": \"Detective\",\n                \"description\": \"Et dolores tempora ut quas dolores quia sint libero. Voluptas illo error voluptatem ea esse quidem ea. Corporis perspiciatis assumenda repudiandae velit.\",\n                \"company_name\": \"Morar-Bahringer\",\n                \"salary_min\": \"4847.00\",\n                \"salary_max\": \"14225.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-07-29 07:44:39\",\n                \"created_at\": \"2024-02-18T22:56:33.000000Z\",\n                \"updated_at\": \"2024-02-18T22:56:33.000000Z\"\n            },\n            {\n                \"id\": 236,\n                \"title\": \"Laundry OR Dry-Cleaning Worker\",\n                \"description\": \"Sint ex praesentium ducimus quam. Dolore sapiente consequuntur accusamus aliquid esse illo tenetur. Consequatur dolorum id quibusdam.\",\n                \"company_name\": \"Price-Reichert\",\n                \"salary_min\": \"7794.00\",\n                \"salary_max\": \"11827.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-04-20 19:51:34\",\n                \"created_at\": \"2025-03-31T19:30:38.000000Z\",\n                \"updated_at\": \"2025-03-31T19:30:38.000000Z\"\n            },\n            {\n                \"id\": 244,\n                \"title\": \"Host and Hostess\",\n                \"description\": \"Facere provident molestiae accusantium quis quis doloribus. Laborum aspernatur sapiente totam temporibus impedit quo tenetur. Ducimus laborum tenetur adipisci eos quasi ex. Quos qui voluptatem perspiciatis nobis. Quos alias rerum temporibus quae nam.\",\n                \"company_name\": \"Wisozk PLC\",\n                \"salary_min\": \"5737.00\",\n                \"salary_max\": \"18348.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-04-17 16:04:22\",\n                \"created_at\": \"2024-01-01T03:54:37.000000Z\",\n                \"updated_at\": \"2024-01-01T03:54:37.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 3,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Jobs By Cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=locations.city HAS_ANY (Jamilfort, South Bethel)",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "locations.city HAS_ANY (Jamilfort, South Bethel)"
+						}
+					]
+				},
+				"description": "Filter jobs by locations."
+			},
+			"response": [
+				{
+					"name": "Find Jobs By Cities Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=locations.city HAS_ANY (Jamilfort, South Bethel)",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "locations.city HAS_ANY (Jamilfort, South Bethel)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:15:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"Machinery Maintenance\",\n                \"description\": \"Et dolore hic et nesciunt est asperiores. Aut molestiae sit cum id dolores. Et velit pariatur quasi provident et quos quam.\",\n                \"company_name\": \"Schamberger Inc\",\n                \"salary_min\": \"5401.00\",\n                \"salary_max\": \"17547.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-03-07 04:56:45\",\n                \"created_at\": \"2024-11-17T04:19:57.000000Z\",\n                \"updated_at\": \"2024-11-17T04:19:57.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Technical Program Manager\",\n                \"description\": \"Veniam dolor voluptatem nemo esse est. Quia adipisci distinctio perspiciatis consequatur sequi a. Aut facilis nisi quis sapiente est reprehenderit pariatur.\",\n                \"company_name\": \"Mosciski, Prosacco and Ledner\",\n                \"salary_min\": \"5989.00\",\n                \"salary_max\": \"11374.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-06-28 20:46:42\",\n                \"created_at\": \"2023-10-28T03:24:03.000000Z\",\n                \"updated_at\": \"2023-10-28T03:24:03.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"title\": \"Teller\",\n                \"description\": \"Velit totam veniam natus ducimus qui. Temporibus mollitia ab sunt quos quaerat et aspernatur. Et autem beatae vel et qui labore architecto. Voluptatem odit tenetur ad ut sunt voluptate. Pariatur quas nobis hic molestias aut.\",\n                \"company_name\": \"Ondricka-Wyman\",\n                \"salary_min\": \"7448.00\",\n                \"salary_max\": \"20000.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-07 08:28:23\",\n                \"created_at\": \"2024-07-08T21:13:36.000000Z\",\n                \"updated_at\": \"2024-07-08T21:13:36.000000Z\"\n            },\n            {\n                \"id\": 12,\n                \"title\": \"Crushing Grinding Machine Operator\",\n                \"description\": \"Itaque accusamus illum ex. Fugit non mollitia excepturi possimus at. Nihil doloremque est velit laboriosam consequuntur consequatur nihil.\",\n                \"company_name\": \"Simonis-Hessel\",\n                \"salary_min\": \"6147.00\",\n                \"salary_max\": \"11407.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-03-27 04:13:38\",\n                \"created_at\": \"2025-03-17T11:04:50.000000Z\",\n                \"updated_at\": \"2025-03-17T11:04:50.000000Z\"\n            },\n            {\n                \"id\": 32,\n                \"title\": \"Freight Inspector\",\n                \"description\": \"Officiis itaque sit tempore nam. Consequatur dolorem facilis qui. Odit aut est aliquid corrupti voluptatum dolorem.\",\n                \"company_name\": \"Larson, Simonis and Homenick\",\n                \"salary_min\": \"5376.00\",\n                \"salary_max\": \"19475.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-10-20 09:59:40\",\n                \"created_at\": \"2024-09-30T01:50:03.000000Z\",\n                \"updated_at\": \"2024-09-30T01:50:03.000000Z\"\n            },\n            {\n                \"id\": 43,\n                \"title\": \"Brake Machine Setter\",\n                \"description\": \"Dolorem quas et nam. Harum fuga tempore facilis praesentium voluptates. Dolor molestiae sed et ullam.\",\n                \"company_name\": \"Blick-Schmidt\",\n                \"salary_min\": \"4901.00\",\n                \"salary_max\": \"17456.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-12-12 08:03:26\",\n                \"created_at\": \"2023-07-04T14:16:37.000000Z\",\n                \"updated_at\": \"2023-07-04T14:16:37.000000Z\"\n            },\n            {\n                \"id\": 60,\n                \"title\": \"Ship Mates\",\n                \"description\": \"Rerum nihil dolore vel laudantium nihil esse. At officia doloribus voluptatum sunt similique. Asperiores rerum maiores architecto dolorem cum. Ut voluptatibus ipsa in commodi sequi omnis et.\",\n                \"company_name\": \"Reinger Inc\",\n                \"salary_min\": \"5669.00\",\n                \"salary_max\": \"15143.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-10-28 07:00:19\",\n                \"created_at\": \"2024-03-14T10:04:28.000000Z\",\n                \"updated_at\": \"2024-03-14T10:04:28.000000Z\"\n            },\n            {\n                \"id\": 67,\n                \"title\": \"Forensic Investigator\",\n                \"description\": \"Fugiat numquam odit molestiae error in rerum et. Consequatur maxime repudiandae nostrum possimus et itaque. Quo eos nostrum placeat et.\",\n                \"company_name\": \"Rice PLC\",\n                \"salary_min\": \"5290.00\",\n                \"salary_max\": \"9192.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-03-06 22:58:53\",\n                \"created_at\": \"2024-05-11T07:04:36.000000Z\",\n                \"updated_at\": \"2024-05-11T07:04:36.000000Z\"\n            },\n            {\n                \"id\": 75,\n                \"title\": \"Medical Appliance Technician\",\n                \"description\": \"Et et molestiae et ut nostrum. Veniam animi doloremque at incidunt eligendi amet nihil. Magni ducimus quia totam eligendi consequatur asperiores doloremque. Nihil dolores explicabo doloremque qui rem.\",\n                \"company_name\": \"Wisozk-Hintz\",\n                \"salary_min\": \"3658.00\",\n                \"salary_max\": \"19588.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-03-09 05:37:55\",\n                \"created_at\": \"2024-12-15T23:17:15.000000Z\",\n                \"updated_at\": \"2024-12-15T23:17:15.000000Z\"\n            },\n            {\n                \"id\": 98,\n                \"title\": \"Electronic Drafter\",\n                \"description\": \"Atque quo voluptas debitis repellendus excepturi deserunt. Autem animi quam et omnis ut praesentium. Atque cumque tenetur nobis quod.\",\n                \"company_name\": \"Hamill, Kuhic and Jenkins\",\n                \"salary_min\": \"5346.00\",\n                \"salary_max\": \"14829.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-07-04 13:40:53\",\n                \"created_at\": \"2024-01-27T17:59:39.000000Z\",\n                \"updated_at\": \"2024-01-27T17:59:39.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 7,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Find Jobs By Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=locations.country IS_ANY (China,United States of America)",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "locations.country IS_ANY (China,United States of America)"
+						}
+					]
+				},
+				"description": "Filter jobs by locations."
+			},
+			"response": [
+				{
+					"name": "Find Jobs By Countries  Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=locations.country IS_ANY (China,United States of America)",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "locations.country IS_ANY (China,United States of America)"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:16:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 5,\n                \"title\": \"Technical Program Manager\",\n                \"description\": \"Veniam dolor voluptatem nemo esse est. Quia adipisci distinctio perspiciatis consequatur sequi a. Aut facilis nisi quis sapiente est reprehenderit pariatur.\",\n                \"company_name\": \"Mosciski, Prosacco and Ledner\",\n                \"salary_min\": \"5989.00\",\n                \"salary_max\": \"11374.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-06-28 20:46:42\",\n                \"created_at\": \"2023-10-28T03:24:03.000000Z\",\n                \"updated_at\": \"2023-10-28T03:24:03.000000Z\"\n            },\n            {\n                \"id\": 17,\n                \"title\": \"Counselor\",\n                \"description\": \"Porro odio illum ut qui. Deleniti aperiam soluta voluptatem asperiores ipsa qui eius. Vero praesentium distinctio quidem dolorem fugit omnis sed. Commodi veritatis culpa sint reprehenderit ea sit.\",\n                \"company_name\": \"Turner-Sipes\",\n                \"salary_min\": \"7860.00\",\n                \"salary_max\": \"18171.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-07-24 10:04:34\",\n                \"created_at\": \"2024-07-09T19:13:18.000000Z\",\n                \"updated_at\": \"2024-07-09T19:13:18.000000Z\"\n            },\n            {\n                \"id\": 19,\n                \"title\": \"English Language Teacher\",\n                \"description\": \"Maxime alias non doloribus excepturi. Ut quas voluptatem consequatur at qui. Qui perferendis nihil beatae et pariatur.\",\n                \"company_name\": \"Gottlieb, Armstrong and Satterfield\",\n                \"salary_min\": \"5111.00\",\n                \"salary_max\": \"11568.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-04-13 07:09:36\",\n                \"created_at\": \"2024-01-17T04:07:58.000000Z\",\n                \"updated_at\": \"2024-01-17T04:07:58.000000Z\"\n            },\n            {\n                \"id\": 25,\n                \"title\": \"Printing Machine Operator\",\n                \"description\": \"Est ea omnis dignissimos eius sint laudantium. Quaerat numquam autem velit quis possimus. Corrupti et dolores consequatur ipsam.\",\n                \"company_name\": \"Sawayn Inc\",\n                \"salary_min\": \"6265.00\",\n                \"salary_max\": \"15102.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-08-25 06:22:23\",\n                \"created_at\": \"2024-04-02T17:33:02.000000Z\",\n                \"updated_at\": \"2024-04-02T17:33:02.000000Z\"\n            },\n            {\n                \"id\": 32,\n                \"title\": \"Freight Inspector\",\n                \"description\": \"Officiis itaque sit tempore nam. Consequatur dolorem facilis qui. Odit aut est aliquid corrupti voluptatum dolorem.\",\n                \"company_name\": \"Larson, Simonis and Homenick\",\n                \"salary_min\": \"5376.00\",\n                \"salary_max\": \"19475.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-10-20 09:59:40\",\n                \"created_at\": \"2024-09-30T01:50:03.000000Z\",\n                \"updated_at\": \"2024-09-30T01:50:03.000000Z\"\n            },\n            {\n                \"id\": 33,\n                \"title\": \"Postmasters\",\n                \"description\": \"Quaerat maxime molestiae fugit commodi illo mollitia in. Ratione totam maiores et fugit aut. Harum delectus et est et hic. Enim error qui veritatis non cumque quisquam.\",\n                \"company_name\": \"Reilly PLC\",\n                \"salary_min\": \"3591.00\",\n                \"salary_max\": \"11406.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-01-22 09:31:53\",\n                \"created_at\": \"2024-02-08T06:32:23.000000Z\",\n                \"updated_at\": \"2024-02-08T06:32:23.000000Z\"\n            },\n            {\n                \"id\": 34,\n                \"title\": \"Spraying Machine Operator\",\n                \"description\": \"Adipisci voluptate nulla pariatur debitis non ea. Pariatur eius molestiae at in dolor nisi vero. Velit repudiandae aut et quas sed est. Rerum tempore magni ut similique laboriosam ipsum cum.\",\n                \"company_name\": \"Volkman, Ryan and Leannon\",\n                \"salary_min\": \"5198.00\",\n                \"salary_max\": \"15337.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-07-17 07:44:32\",\n                \"created_at\": \"2023-12-31T01:22:05.000000Z\",\n                \"updated_at\": \"2023-12-31T01:22:05.000000Z\"\n            },\n            {\n                \"id\": 41,\n                \"title\": \"Recreation Worker\",\n                \"description\": \"Aut quos est est eos in. Provident quia velit deleniti officia. Voluptas nihil optio unde doloremque eos dolores.\",\n                \"company_name\": \"Schaden, Boyer and Hoppe\",\n                \"salary_min\": \"3946.00\",\n                \"salary_max\": \"14160.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-04-22 23:58:18\",\n                \"created_at\": \"2025-04-12T22:25:17.000000Z\",\n                \"updated_at\": \"2025-04-12T22:25:17.000000Z\"\n            },\n            {\n                \"id\": 44,\n                \"title\": \"Forming Machine Operator\",\n                \"description\": \"Commodi enim officia dolores architecto esse. Voluptatem nam repudiandae voluptate voluptatibus.\",\n                \"company_name\": \"Gleichner PLC\",\n                \"salary_min\": \"5371.00\",\n                \"salary_max\": \"16323.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-12-11 18:15:44\",\n                \"created_at\": \"2024-08-05T16:47:30.000000Z\",\n                \"updated_at\": \"2024-08-05T16:47:30.000000Z\"\n            },\n            {\n                \"id\": 46,\n                \"title\": \"Cardiovascular Technologist\",\n                \"description\": \"Pariatur voluptatem beatae aut aut laborum omnis earum. Eligendi perspiciatis est impedit sit recusandae consequatur. Ea placeat atque et nemo incidunt.\",\n                \"company_name\": \"Rosenbaum Group\",\n                \"salary_min\": \"7253.00\",\n                \"salary_max\": \"9864.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-03-03 13:32:25\",\n                \"created_at\": \"2024-11-19T20:54:34.000000Z\",\n                \"updated_at\": \"2024-11-19T20:54:34.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 9,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Years Experience",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=attribute:years_experience>=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "attribute:years_experience>=3"
+						}
+					]
+				},
+				"description": "Filter jobs by years of experience required."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Years Experience  Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=attribute:years_experience>=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "attribute:years_experience>=3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:16:13 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 13,\n                \"title\": \"Marine Cargo Inspector\",\n                \"description\": \"Rem cupiditate delectus ut totam totam earum qui minus. Sit veritatis eos voluptatum repellendus expedita. Dolore quae omnis quae aliquid qui ad aut. Molestiae quisquam alias ea et culpa.\",\n                \"company_name\": \"Gibson Inc\",\n                \"salary_min\": \"6454.00\",\n                \"salary_max\": \"14582.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"published\",\n                \"published_at\": \"2024-07-23 20:37:42\",\n                \"created_at\": \"2024-04-10T17:30:03.000000Z\",\n                \"updated_at\": \"2024-04-10T17:30:03.000000Z\"\n            },\n            {\n                \"id\": 22,\n                \"title\": \"Textile Knitting Machine Operator\",\n                \"description\": \"Rerum praesentium qui laudantium minus pariatur vitae nesciunt. Eligendi enim ut quia quis quae.\",\n                \"company_name\": \"Mills and Sons\",\n                \"salary_min\": \"4907.00\",\n                \"salary_max\": \"10588.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-03-18 18:01:19\",\n                \"created_at\": \"2025-03-13T17:59:21.000000Z\",\n                \"updated_at\": \"2025-03-13T17:59:21.000000Z\"\n            },\n            {\n                \"id\": 26,\n                \"title\": \"Office Clerk\",\n                \"description\": \"Amet rerum nam autem culpa repellat quod et. Optio sed et debitis facere pariatur. Blanditiis voluptas ea consequatur aperiam aut.\",\n                \"company_name\": \"Heathcote and Sons\",\n                \"salary_min\": \"6605.00\",\n                \"salary_max\": \"10377.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-11-05 15:24:04\",\n                \"created_at\": \"2024-02-12T13:04:36.000000Z\",\n                \"updated_at\": \"2024-02-12T13:04:36.000000Z\"\n            },\n            {\n                \"id\": 27,\n                \"title\": \"Interior Designer\",\n                \"description\": \"Rem quas ducimus aut assumenda cupiditate quod. Quia optio assumenda eligendi placeat accusantium. Voluptatibus qui nisi et dolorem.\",\n                \"company_name\": \"Flatley Inc\",\n                \"salary_min\": \"3461.00\",\n                \"salary_max\": \"13497.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"published\",\n                \"published_at\": \"2025-03-30 18:17:38\",\n                \"created_at\": \"2025-03-16T08:58:30.000000Z\",\n                \"updated_at\": \"2025-03-16T08:58:30.000000Z\"\n            },\n            {\n                \"id\": 31,\n                \"title\": \"Transportation Manager\",\n                \"description\": \"Ab placeat possimus doloremque iste. Nam est consequatur aut eos eum harum ullam. In culpa amet omnis. Sit non accusamus nihil incidunt aut repellat quis.\",\n                \"company_name\": \"Hessel Inc\",\n                \"salary_min\": \"4581.00\",\n                \"salary_max\": \"10057.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-01-16 13:33:43\",\n                \"created_at\": \"2023-12-09T21:21:03.000000Z\",\n                \"updated_at\": \"2023-12-09T21:21:03.000000Z\"\n            },\n            {\n                \"id\": 35,\n                \"title\": \"Pediatricians\",\n                \"description\": \"Voluptates ut in cumque autem illum hic. Magni velit qui omnis. Minima voluptatem laudantium et et sequi eligendi qui.\",\n                \"company_name\": \"Reichel-Considine\",\n                \"salary_min\": \"3164.00\",\n                \"salary_max\": \"17927.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-08-01 12:36:13\",\n                \"created_at\": \"2024-03-01T15:14:05.000000Z\",\n                \"updated_at\": \"2024-03-01T15:14:05.000000Z\"\n            },\n            {\n                \"id\": 41,\n                \"title\": \"Recreation Worker\",\n                \"description\": \"Aut quos est est eos in. Provident quia velit deleniti officia. Voluptas nihil optio unde doloremque eos dolores.\",\n                \"company_name\": \"Schaden, Boyer and Hoppe\",\n                \"salary_min\": \"3946.00\",\n                \"salary_max\": \"14160.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"freelance\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-04-22 23:58:18\",\n                \"created_at\": \"2025-04-12T22:25:17.000000Z\",\n                \"updated_at\": \"2025-04-12T22:25:17.000000Z\"\n            },\n            {\n                \"id\": 42,\n                \"title\": \"Cook\",\n                \"description\": \"Aliquid dolorem explicabo nihil sit aut voluptatem. Mollitia dolorem nam voluptas minus provident. Corrupti repellat unde maiores harum dolorem qui labore.\",\n                \"company_name\": \"Mayert-Heaney\",\n                \"salary_min\": \"3832.00\",\n                \"salary_max\": \"19649.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2023-12-02 23:32:36\",\n                \"created_at\": \"2023-10-12T17:04:40.000000Z\",\n                \"updated_at\": \"2023-10-12T17:04:40.000000Z\"\n            },\n            {\n                \"id\": 47,\n                \"title\": \"Home Entertainment Equipment Installer\",\n                \"description\": \"Nobis perspiciatis labore porro accusamus eos reprehenderit qui. Molestiae eveniet provident porro porro perspiciatis. Error minus sint autem dolores voluptatibus.\",\n                \"company_name\": \"Powlowski-Miller\",\n                \"salary_min\": \"7899.00\",\n                \"salary_max\": \"12731.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-01-30 23:49:29\",\n                \"created_at\": \"2023-07-07T16:45:35.000000Z\",\n                \"updated_at\": \"2023-07-07T16:45:35.000000Z\"\n            },\n            {\n                \"id\": 55,\n                \"title\": \"Wholesale Buyer\",\n                \"description\": \"Beatae repellat ullam officia quo et. Asperiores expedita hic expedita quas sit vel rem. Dolor sequi et consequatur reprehenderit accusamus quasi eos.\",\n                \"company_name\": \"Reynolds and Sons\",\n                \"salary_min\": \"4257.00\",\n                \"salary_max\": \"9576.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2023-10-28 14:12:44\",\n                \"created_at\": \"2023-09-17T00:39:58.000000Z\",\n                \"updated_at\": \"2023-09-17T00:39:58.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 13,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Filter Jobs by Education Level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=attribute:experience_level=senior",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "attribute:experience_level=senior"
+						}
+					]
+				},
+				"description": "Filter jobs by education level required."
+			},
+			"response": [
+				{
+					"name": "Filter Jobs by Education Level Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=attribute:experience_level=senior",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "attribute:experience_level=senior"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:16:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"title\": \"Ship Carpenter and Joiner\",\n                \"description\": \"Laboriosam id illum distinctio est illo earum. Beatae dicta ipsum adipisci reprehenderit consequatur non. Quo quo impedit quae dolor hic dolores.\",\n                \"company_name\": \"Renner LLC\",\n                \"salary_min\": \"7758.00\",\n                \"salary_max\": \"10022.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-12-22 07:02:23\",\n                \"created_at\": \"2024-09-16T08:58:33.000000Z\",\n                \"updated_at\": \"2024-09-16T08:58:33.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Technical Program Manager\",\n                \"description\": \"Veniam dolor voluptatem nemo esse est. Quia adipisci distinctio perspiciatis consequatur sequi a. Aut facilis nisi quis sapiente est reprehenderit pariatur.\",\n                \"company_name\": \"Mosciski, Prosacco and Ledner\",\n                \"salary_min\": \"5989.00\",\n                \"salary_max\": \"11374.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-06-28 20:46:42\",\n                \"created_at\": \"2023-10-28T03:24:03.000000Z\",\n                \"updated_at\": \"2023-10-28T03:24:03.000000Z\"\n            },\n            {\n                \"id\": 11,\n                \"title\": \"Electrician\",\n                \"description\": \"Minus accusamus laboriosam nihil fuga minima. Quaerat asperiores libero sed. Inventore reprehenderit repudiandae rem iure accusantium dignissimos. Facere tempore tempore veniam itaque ipsum itaque sunt.\",\n                \"company_name\": \"Kovacek-Satterfield\",\n                \"salary_min\": \"3488.00\",\n                \"salary_max\": \"18952.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-10-22 00:42:37\",\n                \"created_at\": \"2023-07-09T18:57:37.000000Z\",\n                \"updated_at\": \"2023-07-09T18:57:37.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"title\": \"Information Systems Manager\",\n                \"description\": \"Sed sequi unde et ut est. Ab quibusdam vitae sit ut id porro consequatur.\",\n                \"company_name\": \"Hegmann-Maggio\",\n                \"salary_min\": \"5164.00\",\n                \"salary_max\": \"19619.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2023-07-28 14:08:46\",\n                \"created_at\": \"2023-07-17T18:33:18.000000Z\",\n                \"updated_at\": \"2023-07-17T18:33:18.000000Z\"\n            },\n            {\n                \"id\": 19,\n                \"title\": \"English Language Teacher\",\n                \"description\": \"Maxime alias non doloribus excepturi. Ut quas voluptatem consequatur at qui. Qui perferendis nihil beatae et pariatur.\",\n                \"company_name\": \"Gottlieb, Armstrong and Satterfield\",\n                \"salary_min\": \"5111.00\",\n                \"salary_max\": \"11568.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-04-13 07:09:36\",\n                \"created_at\": \"2024-01-17T04:07:58.000000Z\",\n                \"updated_at\": \"2024-01-17T04:07:58.000000Z\"\n            },\n            {\n                \"id\": 28,\n                \"title\": \"Occupational Therapist Aide\",\n                \"description\": \"Quasi est repellat asperiores natus aliquid est aliquid. Ab aliquam id asperiores molestiae. Nisi esse et aut amet dolorem perferendis.\",\n                \"company_name\": \"Kohler Ltd\",\n                \"salary_min\": \"3892.00\",\n                \"salary_max\": \"9665.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2025-02-22 02:32:33\",\n                \"created_at\": \"2025-01-03T13:43:09.000000Z\",\n                \"updated_at\": \"2025-01-03T13:43:09.000000Z\"\n            },\n            {\n                \"id\": 30,\n                \"title\": \"Crane and Tower Operator\",\n                \"description\": \"Quisquam veniam maiores facilis et aut. Corporis non eum in temporibus dolorem voluptatem eum non. Molestiae adipisci deleniti aut eum maxime nam repellendus.\",\n                \"company_name\": \"Nicolas Ltd\",\n                \"salary_min\": \"4278.00\",\n                \"salary_max\": \"18052.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"part-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-12-22 14:41:47\",\n                \"created_at\": \"2024-05-11T18:40:29.000000Z\",\n                \"updated_at\": \"2024-05-11T18:40:29.000000Z\"\n            },\n            {\n                \"id\": 31,\n                \"title\": \"Transportation Manager\",\n                \"description\": \"Ab placeat possimus doloremque iste. Nam est consequatur aut eos eum harum ullam. In culpa amet omnis. Sit non accusamus nihil incidunt aut repellat quis.\",\n                \"company_name\": \"Hessel Inc\",\n                \"salary_min\": \"4581.00\",\n                \"salary_max\": \"10057.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"full-time\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-01-16 13:33:43\",\n                \"created_at\": \"2023-12-09T21:21:03.000000Z\",\n                \"updated_at\": \"2023-12-09T21:21:03.000000Z\"\n            },\n            {\n                \"id\": 39,\n                \"title\": \"Insurance Policy Processing Clerk\",\n                \"description\": \"Qui voluptatibus tenetur officia voluptatem. Ratione sed ipsa et voluptas repellat. Repellendus aut dolor id ea. Ab autem iusto debitis consequatur ut harum.\",\n                \"company_name\": \"Wilkinson-Bashirian\",\n                \"salary_min\": \"7361.00\",\n                \"salary_max\": \"18055.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"freelance\",\n                \"status\": \"draft\",\n                \"published_at\": \"2024-09-06 19:52:37\",\n                \"created_at\": \"2024-06-06T11:56:57.000000Z\",\n                \"updated_at\": \"2024-06-06T11:56:57.000000Z\"\n            },\n            {\n                \"id\": 68,\n                \"title\": \"Etcher and Engraver\",\n                \"description\": \"Non aliquid eveniet rem velit cum. Tempore non nihil quia et odit. Rerum libero odio qui alias.\",\n                \"company_name\": \"Hoppe, Muller and Gulgowski\",\n                \"salary_min\": \"4214.00\",\n                \"salary_max\": \"14942.00\",\n                \"is_remote\": 0,\n                \"job_type\": \"contract\",\n                \"status\": \"archived\",\n                \"published_at\": \"2024-06-21 12:35:31\",\n                \"created_at\": \"2024-01-16T12:25:55.000000Z\",\n                \"updated_at\": \"2024-01-16T12:25:55.000000Z\"\n            }\n        ],\n        \"next_page_url\": \"https://job-board.local/api/jobs?page=2\",\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 6,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Complex Filter Example",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jobs?limit=10&filter=(job_type=full-time AND (languages HAS_ANY (PHP,JavaScript))) AND (locations IS_ANY (New York,Remote)) AND attribute:years_experience>=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "(job_type=full-time AND (languages HAS_ANY (PHP,JavaScript))) AND (locations IS_ANY (New York,Remote)) AND attribute:years_experience>=3"
+						}
+					]
+				},
+				"description": "A complex filter example combining multiple conditions."
+			},
+			"response": [
+				{
+					"name": "Complex Filter Example  Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/jobs?limit=10&filter=(job_type=full-time AND (languages HAS_ANY (PHP,JavaScript))) AND (locations IS_ANY (South Dakota)) AND attribute:years_experience>=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "filter",
+									"value": "(job_type=full-time AND (languages HAS_ANY (PHP,JavaScript))) AND (locations IS_ANY (South Dakota)) AND attribute:years_experience>=3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 23 Apr 2025 16:17:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1s PHP/8.3.12"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"msg\": \"Jobs retrieved successfully\",\n    \"jobs\": {\n        \"data\": [\n            {\n                \"id\": 312,\n                \"title\": \"Organizational Development Manager\",\n                \"description\": \"Doloribus vero et sed. Consequatur quasi vitae aperiam repellendus qui magnam ut. Rerum placeat deleniti rem autem placeat et expedita vero.\",\n                \"company_name\": \"Hauck-Morissette\",\n                \"salary_min\": \"7183.00\",\n                \"salary_max\": \"15405.00\",\n                \"is_remote\": 1,\n                \"job_type\": \"full-time\",\n                \"status\": \"draft\",\n                \"published_at\": \"2025-03-03 17:59:04\",\n                \"created_at\": \"2024-04-02T00:09:54.000000Z\",\n                \"updated_at\": \"2024-04-02T00:09:54.000000Z\"\n            }\n        ],\n        \"next_page_url\": null,\n        \"prev_page_url\": null,\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"per_page\": 10\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://job-board.local/api",
+			"type": "string"
+		}
+	]
+}
