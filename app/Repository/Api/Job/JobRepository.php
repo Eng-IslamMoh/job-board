@@ -21,6 +21,6 @@ class JobRepository implements JobRepositoryInterface
             $query = $this->filterService->apply($query, $filter);
         }
 
-        return $query->paginate($limit);
+        return $query->with(['locations', 'categories', 'languages', 'attributes.attribute'])->paginate($limit);
     }
 }
